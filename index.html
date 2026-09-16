@@ -1,0 +1,1153 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+<meta name="theme-color" content="#060D26">
+<title>Para Anheluci ✦ feliz cumpleaños</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Fraunces:ital,opsz,wght@0,9..144,400..700;1,9..144,400..700&family=Instrument+Sans:ital,wght@0,400..700;1,400..700&display=swap" rel="stylesheet">
+<style>
+/* ══════════════════════════════════════════════════════════════
+   Para Anheluci — la noche de su cumpleaños · v2
+   Cielo: su paleta «calma oceánica». Luna: la fase real de esta
+   noche. El rosa #ffb6c1 — el único color cálido — es el corazón.
+   ══════════════════════════════════════════════════════════════ */
+:root{
+  --abismo:#060D26;      --abismo-2:#0B1738;
+  --nieve:#E5EDFA;       --hielo:#A8C0EB;
+  --bruma:#7999DC;       --tinta-soft:#C9D9F1;
+  --linea:#1E2E5C;       --linea-fuerte:#2E4072;
+  --luz-azul:#7999DC;
+  --corazon:#ffb6c1;     /* el único color cálido: el amor */
+  --oro:#ffd977;
+  --font-sans:'Instrument Sans', ui-sans-serif, system-ui, sans-serif;
+  --font-display:'Fraunces', Georgia, serif;
+  --curve:cubic-bezier(.22,.61,.36,1);
+}
+*{margin:0;padding:0;box-sizing:border-box}
+html{scroll-behavior:smooth}
+body{
+  background:var(--abismo);
+  color:var(--tinta-soft);
+  font-family:var(--font-sans);
+  overflow-x:hidden;
+  -webkit-font-smoothing:antialiased;
+}
+::selection{background:rgba(121,153,220,.35);color:var(--nieve)}
+body::-webkit-scrollbar{width:9px}
+body::-webkit-scrollbar-track{background:var(--abismo)}
+body::-webkit-scrollbar-thumb{background:var(--linea-fuerte);border-radius:99px}
+
+/* ——— el cielo (canvas fijo detrás de todo) ——— */
+#sky{position:fixed;inset:0;z-index:0;display:block;opacity:0;transition:opacity 2.2s ease}
+#sky.on{opacity:1}
+
+/* ——— contenido ——— */
+main{position:relative;z-index:1}
+section{position:relative;padding:0 24px}
+.wrap{max-width:640px;margin:0 auto}
+
+/* ═══ HERO ═══ */
+.hero{min-height:100dvh;display:flex;flex-direction:column;align-items:center;justify-content:center;text-align:center}
+.kicker{
+  font-size:11.5px;letter-spacing:.34em;text-transform:uppercase;color:var(--bruma);
+  font-weight:600;opacity:0;animation:riseIn 1.2s var(--curve) 1.1s forwards;
+}
+.h-feliz{
+  font-family:var(--font-display);font-style:italic;font-weight:400;
+  font-size:clamp(22px,4.2vw,34px);color:var(--hielo);
+  margin-top:18px;opacity:0;animation:riseIn 1.4s var(--curve) 2.1s forwards;
+}
+.h-nombre{
+  font-family:var(--font-display);font-weight:600;
+  font-size:clamp(68px,14.5vw,168px);line-height:1;letter-spacing:-.01em;
+  color:var(--nieve);margin-top:6px;
+}
+.h-nombre .l{display:inline-block;opacity:0;filter:blur(6px);transform:translateY(26px)}
+.h-nombre .l.in{animation:letterIn 1.1s var(--curve) forwards}
+@keyframes letterIn{to{opacity:1;filter:blur(0);transform:none}}
+.h-nombre .punto{
+  display:inline-block;color:var(--corazon);
+  animation:latido 3.2s ease-in-out infinite;
+}
+@keyframes latido{
+  0%,100%{text-shadow:0 0 12px rgba(255,182,193,.55),0 0 30px rgba(255,182,193,.25)}
+  50%{text-shadow:0 0 26px rgba(255,182,193,.95),0 0 70px rgba(255,182,193,.45)}
+}
+.h-sub{
+  font-size:14px;color:var(--bruma);letter-spacing:.06em;margin-top:26px;
+  opacity:0;animation:riseIn 1.4s var(--curve) 3.6s forwards;
+}
+.h-lunas{
+  margin-top:12px;font-size:14.5px;color:var(--hielo);letter-spacing:.03em;
+  opacity:0;animation:riseIn 1.6s var(--curve) 4.6s forwards;
+}
+.h-lunas b{color:var(--nieve);font-weight:600;font-variant-numeric:tabular-nums}
+.h-flecha{
+  position:absolute;bottom:34px;left:50%;transform:translateX(-50%);
+  color:var(--bruma);opacity:0;animation:riseIn 1.4s var(--curve) 5.2s forwards, flotar 2.6s ease-in-out 6.6s infinite;
+}
+.h-flecha svg{width:22px;height:22px;stroke:currentColor;fill:none;stroke-width:1.6;stroke-linecap:round;stroke-linejoin:round}
+@keyframes flotar{0%,100%{margin-bottom:0}50%{margin-bottom:10px}}
+@keyframes riseIn{from{opacity:0;transform:translateY(16px)}to{opacity:1;transform:none}}
+
+/* ═══ POEMA ═══ */
+.poema{padding-top:16vh;padding-bottom:6vh}
+.p-intro{
+  text-align:center;font-family:var(--font-display);font-style:italic;
+  color:var(--bruma);font-size:15.5px;margin-bottom:9vh;
+}
+.p-intro::after{content:' ✦ ';display:block;margin-top:14px;font-style:normal;font-size:11px;color:var(--linea-fuerte)}
+.stanza{margin-bottom:64px;position:relative;padding-left:44px}
+.stanza .n{
+  position:absolute;left:0;top:4px;font-family:var(--font-display);font-style:italic;
+  font-size:13px;color:var(--linea-fuerte);border:1px solid var(--linea);
+  width:28px;height:28px;border-radius:99px;display:grid;place-items:center;
+}
+.stanza .line{
+  font-family:var(--font-display);font-weight:400;
+  font-size:clamp(17px,2.6vw,20px);line-height:1.95;color:var(--tinta-soft);
+  opacity:0;transform:translateY(16px);
+  transition:opacity .9s var(--curve),transform .9s var(--curve);
+}
+.stanza.in .line{opacity:1;transform:none}
+.stanza.in .line:nth-child(2){transition-delay:.12s}
+.stanza.in .line:nth-child(3){transition-delay:.24s}
+.stanza.in .line:nth-child(4){transition-delay:.36s}
+.stanza.in .line:nth-child(5){transition-delay:.48s}
+.stanza.amor .line{color:#f2dbe2}
+.stanza.amor .n{border-color:rgba(255,182,193,.4);color:var(--corazon)}
+.stanza.final .line{color:var(--hielo)}
+
+/* ═══ LA CARTA SELLADA ═══ */
+.carta{padding:10vh 24px 12vh;display:flex;flex-direction:column;align-items:center}
+.carta-kicker{text-align:center;font-family:var(--font-display);font-style:italic;color:var(--bruma);font-size:15.5px;margin-bottom:30px}
+.sobre{
+  position:relative;max-width:560px;width:100%;
+  background:linear-gradient(165deg,#0E1B42,#0A1430);
+  border:1px solid var(--linea-fuerte);border-radius:20px;
+  box-shadow:0 24px 54px rgba(0,4,24,.7);
+  padding:46px 34px 40px;cursor:pointer;
+  min-height:210px;display:flex;flex-direction:column;align-items:center;justify-content:center;gap:22px;
+  transition:box-shadow .4s;
+}
+.sobre::before{content:'';position:absolute;inset:8px;border:1px solid var(--linea);border-radius:14px;pointer-events:none}
+.sobre:hover{box-shadow:0 24px 60px rgba(0,4,24,.7),0 0 34px rgba(255,182,193,.12)}
+.sobre:focus-visible{outline:2px solid var(--luz-azul);outline-offset:6px}
+.wax-seal{
+  width:66px;height:66px;border-radius:99px;position:relative;flex-shrink:0;
+  background:radial-gradient(circle at 34% 30%,#ffd3da,var(--corazon) 55%,#e39aa7 100%);
+  box-shadow:inset 0 3px 5px rgba(255,255,255,.4),inset 0 -5px 9px rgba(150,40,60,.45),0 6px 18px rgba(255,140,160,.30);
+  display:grid;place-items:center;transition:transform .25s var(--curve);
+}
+.wax-seal::after{content:'';position:absolute;inset:7px;border-radius:99px;border:1.5px dashed rgba(255,246,248,.55)}
+.wax-seal svg{width:27px;height:27px;color:rgba(255,250,252,.92)}
+.sobre:hover .wax-seal{transform:scale(1.07) rotate(-3deg)}
+.sobre-hint{font-size:12.5px;color:var(--bruma);letter-spacing:.05em}
+.sobre-hint b{color:var(--tinta-soft)}
+.sobre.abierta{cursor:default}
+.sobre.abierta .wax-seal{animation:crack .6s ease-out forwards}
+@keyframes crack{35%{transform:scale(1.25) rotate(-10deg);opacity:1}100%{transform:scale(1.6) rotate(16deg);opacity:0}}
+.sobre.abierta .sobre-hint{opacity:0;transition:opacity .4s}
+.carta-texto{max-height:0;opacity:0;overflow:hidden;width:100%;
+  transition:max-height 1.8s var(--curve),opacity 1.2s ease .5s}
+.sobre.abierta .carta-texto{max-height:1800px;opacity:1}
+.carta-texto p{
+  font-family:var(--font-display);font-size:clamp(15.5px,2.4vw,17.5px);line-height:1.85;color:var(--tinta-soft);
+  margin-bottom:18px;opacity:0;transform:translateY(14px);
+  transition:opacity .9s var(--curve),transform .9s var(--curve);
+}
+.sobre.abierta .carta-texto p{opacity:1;transform:none}
+.sobre.abierta .carta-texto p:nth-child(1){transition-delay:.55s}
+.sobre.abierta .carta-texto p:nth-child(2){transition-delay:.85s}
+.sobre.abierta .carta-texto p:nth-child(3){transition-delay:1.15s}
+.sobre.abierta .carta-texto p:nth-child(4){transition-delay:1.45s}
+.sobre.abierta .carta-texto p:nth-child(5){transition-delay:1.75s}
+.sobre.abierta .carta-texto p:nth-child(6){transition-delay:2.05s}
+.sobre.abierta .carta-texto p:nth-child(7){transition-delay:2.35s}
+.carta-texto p.saludo{color:var(--hielo);font-weight:600}
+.carta-texto p.firma-linea{text-align:right;font-style:italic;color:var(--corazon);margin-top:6px}
+
+/* ═══ LA VELA ═══ */
+.vela-seccion{min-height:100dvh;display:flex;flex-direction:column;align-items:center;justify-content:center;text-align:center;padding-bottom:8vh}
+.v-titulo{font-family:var(--font-display);font-style:italic;font-size:clamp(20px,3.6vw,27px);color:var(--hielo)}
+.v-pasos{margin-top:14px;font-size:13.5px;color:var(--bruma);line-height:1.9;max-width:40ch}
+.v-pasos b{color:var(--tinta-soft);font-weight:600}
+.candle-scene{position:relative;width:150px;height:250px;margin-top:44px;cursor:pointer;-webkit-tap-highlight-color:transparent}
+.candle-scene:focus-visible{outline:2px solid var(--luz-azul);outline-offset:10px;border-radius:24px}
+.halo{
+  position:absolute;left:50%;bottom:78px;width:300px;height:300px;
+  transform:translate(-50%,50%);pointer-events:none;
+  background:radial-gradient(circle,rgba(255,217,140,.20),rgba(255,217,140,.06) 42%,transparent 70%);
+  animation:haloPulse 3.4s ease-in-out infinite;
+  transition:opacity 1s ease;
+}
+@keyframes haloPulse{50%{opacity:.55;transform:translate(-50%,50%) scale(1.12)}}
+.flame{
+  position:absolute;left:50%;bottom:102px;width:22px;height:46px;
+  transform-origin:50% 100%;transform:translateX(-50%);
+  background:radial-gradient(ellipse at 50% 72%,#fff8da 0%,var(--oro) 34%,#ff9d3c 66%,rgba(255,105,40,.12) 100%);
+  border-radius:50% 50% 50% 50% / 62% 62% 38% 38%;
+  filter:drop-shadow(0 0 14px rgba(255,190,90,.85));
+  animation:flicker 1.8s ease-in-out infinite;
+}
+.flame::before{
+  content:'';position:absolute;left:50%;bottom:2px;width:8px;height:15px;transform:translateX(-50%);
+  border-radius:50% 50% 50% 50% / 60% 60% 40% 40%;
+  background:radial-gradient(ellipse at 50% 80%,rgba(150,195,255,.95),rgba(95,145,255,.3) 70%,transparent);
+}
+@keyframes flicker{
+  0%,100%{transform:translateX(-50%) scale(1) rotate(-1.4deg)}
+  22%{transform:translateX(-53%) scale(1.07,1.12) rotate(1.8deg)}
+  48%{transform:translateX(-47%) scale(.94,.96) rotate(-1deg)}
+  74%{transform:translateX(-51%) scale(1.05,1.02) rotate(1.2deg)}
+}
+.wick{position:absolute;left:50%;bottom:99px;width:3px;height:9px;transform:translateX(-50%);
+  background:linear-gradient(#262633,#575763);border-radius:2px}
+.wax{
+  position:absolute;left:50%;bottom:0;transform:translateX(-50%);
+  width:66px;height:98px;border-radius:9px 9px 5px 5px;
+  background:linear-gradient(90deg,#cfd3e2,#f3efe2 28%,#fffdf4 50%,#e6e1d0 74%,#c2c6d8);
+  box-shadow:inset -9px 0 16px rgba(70,80,120,.28),inset 6px 0 10px rgba(255,255,255,.35),0 20px 34px rgba(0,5,25,.55);
+}
+.wax::before{
+  content:'';position:absolute;top:-7px;left:-1px;right:-1px;height:18px;
+  background:linear-gradient(#fffdf4,#f0ecdd);border-radius:50%;
+}
+.wax::after{
+  content:'';position:absolute;top:4px;right:7px;width:7px;height:14px;
+  background:linear-gradient(#fffdf4,#e9e4d3);border-radius:50% 50% 60% 60%;
+}
+.plate{
+  position:absolute;left:50%;bottom:-12px;transform:translateX(-50%);
+  width:116px;height:18px;border-radius:50%;
+  background:radial-gradient(#3d4470,#1b2346 70%);
+  box-shadow:0 8px 18px rgba(0,4,20,.6);
+}
+.v-hint{margin-top:46px;font-size:12.5px;color:var(--bruma);letter-spacing:.05em}
+.v-hint b{color:var(--tinta-soft)}
+.candle-scene.out .flame{animation:blowOut .5s ease-out forwards}
+@keyframes blowOut{
+  0%{transform:translateX(-50%) scale(1)}
+  40%{transform:translateX(-50%) scale(.25,1.5);opacity:.9}
+  100%{transform:translateX(-50%) scale(0,1.2);opacity:0}
+}
+.candle-scene.out .halo{animation:none;opacity:0}
+.smoke{position:absolute;left:50%;bottom:104px;width:10px;height:10px;border-radius:99px;
+  background:rgba(178,193,224,.45);pointer-events:none;filter:blur(3px)}
+
+/* ═══ CLÍMAX — la declaración ═══ */
+.climax{min-height:100dvh;display:none;flex-direction:column;align-items:center;justify-content:center;text-align:center;padding:12vh 24px}
+.climax.on{display:flex}
+.c-pre{
+  font-family:var(--font-display);font-style:italic;color:var(--bruma);
+  font-size:15.5px;max-width:42ch;line-height:1.8;
+}
+.heart-svg{width:min(64vw,330px);height:auto;margin:34px auto 8px;overflow:visible}
+.heart-svg circle{opacity:0;transition:opacity .45s ease}
+.heart-svg circle.in{opacity:1}
+.heart-svg path{
+  fill:none;stroke:var(--corazon);stroke-width:2.4;stroke-linejoin:round;stroke-linecap:round;
+  filter:drop-shadow(0 0 7px rgba(255,182,193,.65));
+}
+.heart-svg.beat{animation:heartbeat 2.3s ease-in-out infinite;transform-origin:50% 55%}
+@keyframes heartbeat{
+  0%,100%{transform:scale(1)}
+  12%{transform:scale(1.07)}
+  24%{transform:scale(1)}
+  36%{transform:scale(1.05)}
+  50%{transform:scale(1)}
+}
+.c-amo{
+  font-family:var(--font-display);font-weight:600;
+  font-size:clamp(42px,9vw,86px);color:var(--nieve);line-height:1.15;margin-top:26px;
+}
+.c-amo .rosa{color:var(--corazon)}
+.c-cuando{font-family:var(--font-display);font-style:italic;font-size:clamp(17px,3.2vw,23px);color:var(--hielo);margin-top:18px;line-height:1.7}
+.word{display:inline-block;opacity:0;transform:translateY(14px);transition:opacity .9s var(--curve),transform .9s var(--curve)}
+.word.in{opacity:1;transform:none}
+
+/* ═══ CIERRE ═══ */
+.cierre{min-height:80dvh;display:flex;flex-direction:column;align-items:center;justify-content:center;text-align:center;padding-bottom:14vh}
+.c-deseo{font-family:var(--font-display);font-style:italic;font-size:clamp(18px,3.4vw,25px);color:var(--hielo);line-height:1.8;max-width:34ch}
+.c-firma{margin-top:44px;font-size:14px;color:var(--bruma);letter-spacing:.08em}
+.c-firma b{color:var(--tinta-soft);font-weight:600}
+.c-pd{
+  margin-top:64px;font-size:12px;color:var(--linea-fuerte);max-width:44ch;line-height:1.9;
+  border-top:1px solid var(--linea);padding-top:24px;
+}
+.c-pd b{color:var(--bruma);font-weight:600}
+
+/* ═══ palabras que flotan ═══ */
+.palabra-fx{
+  position:fixed;top:0;left:0;
+  font-family:var(--font-display);font-style:italic;font-size:15px;
+  color:var(--hielo);pointer-events:none;z-index:26;white-space:nowrap;
+  text-shadow:0 0 14px rgba(168,192,235,.55);
+}
+
+/* ═══ botón música ═══ */
+.music-btn{
+  position:fixed;right:22px;bottom:22px;z-index:40;
+  height:46px;width:46px;border-radius:99px;
+  border:1px solid var(--linea-fuerte);background:rgba(14,27,66,.72);
+  backdrop-filter:blur(8px);-webkit-backdrop-filter:blur(8px);
+  color:var(--bruma);display:grid;place-items:center;cursor:pointer;
+  transition:border-color .3s,color .3s,box-shadow .4s,transform .2s;
+}
+.music-btn:hover{border-color:var(--bruma);color:var(--hielo)}
+.music-btn:active{transform:scale(.9)}
+.music-btn svg{width:19px;height:19px;stroke:currentColor;fill:none;stroke-width:1.8;stroke-linecap:round;stroke-linejoin:round}
+.music-btn.on{
+  border-color:var(--luz-azul);color:var(--hielo);
+  box-shadow:0 0 0 3px rgba(121,153,220,.12),0 0 18px rgba(121,153,220,.3);
+}
+.music-btn.on::after{
+  content:'';position:absolute;inset:-5px;border-radius:99px;
+  border:1px solid rgba(121,153,220,.4);animation:gemPulse 2.8s ease-out infinite;
+}
+@keyframes gemPulse{from{transform:scale(.85);opacity:.9}to{transform:scale(1.4);opacity:0}}
+.music-label{
+  position:fixed;right:78px;bottom:33px;z-index:40;
+  font-size:11px;color:var(--bruma);letter-spacing:.06em;pointer-events:none;
+}
+
+/* ═══ toast ═══ */
+.toast{
+  position:fixed;left:50%;bottom:30px;transform:translateX(-50%) translateY(14px);
+  z-index:60;background:rgba(14,27,66,.9);border:1px solid var(--linea-fuerte);
+  color:var(--tinta-soft);border-radius:99px;padding:10px 20px;font-size:13px;
+  box-shadow:0 14px 34px rgba(0,4,20,.5);opacity:0;pointer-events:none;
+  transition:opacity .5s var(--curve),transform .5s var(--curve);white-space:nowrap;
+}
+.toast.show{opacity:1;transform:translateX(-50%)}
+
+@media (prefers-reduced-motion:reduce){
+  *{animation:none!important;transition-duration:.01ms!important}
+  #sky{opacity:1}
+  .h-nombre .l,.kicker,.h-feliz,.h-sub,.h-lunas,.h-flecha{opacity:1!important;filter:none!important;transform:none!important}
+  .stanza .line,.word,.carta-texto p{opacity:1!important;transform:none!important}
+  .flame{animation:none}
+}
+</style>
+</head>
+<body>
+
+<canvas id="sky" aria-hidden="true"></canvas>
+
+<main>
+
+  <!-- ═══ EL ANUNCIO ═══ -->
+  <section class="hero">
+    <p class="kicker">esta noche, el cielo tiene algo que decirte</p>
+    <p class="h-feliz">feliz cumpleaños,</p>
+    <h1 class="h-nombre" id="hNombre" aria-label="Anheluci">Anheluci<span class="punto">.</span></h1>
+    <p class="h-sub">hay una página entera de cielo escrita para ti — baja despacio</p>
+    <p class="h-lunas" id="hLunas" hidden></p>
+    <div class="h-flecha" aria-hidden="true">
+      <svg viewBox="0 0 24 24"><path d="m6 9 6 6 6-6"/></svg>
+    </div>
+  </section>
+
+  <!-- ═══ EL POEMA ═══ -->
+  <section class="poema">
+    <div class="wrap">
+      <p class="p-intro">un poema, porque los regalos también se escriben</p>
+
+      <div class="stanza" data-reveal>
+        <span class="n">I</span>
+        <p class="line">Dicen que la noche en que naciste</p>
+        <p class="line">la luna se detuvo a mirarte:</p>
+        <p class="line">quería aprender de cerca</p>
+        <p class="line">ese arte tuyo de brillar.</p>
+      </div>
+
+      <div class="stanza" data-reveal>
+        <span class="n">II</span>
+        <p class="line">Tu nombre empieza como el anhelo</p>
+        <p class="line">y termina como la luz:</p>
+        <p class="line">qué manera tan exacta</p>
+        <p class="line">de decir que existes tú.</p>
+      </div>
+
+      <div class="stanza" data-reveal>
+        <span class="n">III</span>
+        <p class="line">Las estrellas están encendidas</p>
+        <p class="line">para que puedas soñar;</p>
+        <p class="line">la noche se quedó despierta</p>
+        <p class="line">por si querías platicar.</p>
+      </div>
+
+      <div class="stanza" data-reveal>
+        <span class="n">IV</span>
+        <p class="line">Hoy el cielo está de fiesta</p>
+        <p class="line">sin necesitar razón:</p>
+        <p class="line">cumples años, y el universo</p>
+        <p class="line">celebra su mejor canción.</p>
+      </div>
+
+      <div class="stanza amor" data-reveal>
+        <span class="n">V</span>
+        <p class="line">Yo te amo con la calma</p>
+        <p class="line">de quien no conoce la prisa:</p>
+        <p class="line">como la luna a la marea,</p>
+        <p class="line">como la noche a su brisa.</p>
+      </div>
+
+      <div class="stanza final" data-reveal>
+        <span class="n">VI</span>
+        <p class="line">Feliz cumpleaños, mi luz:</p>
+        <p class="line">que la vida te devuelva,</p>
+        <p class="line">multiplicada en estrellas,</p>
+        <p class="line">toda la que das sin darte cuenta.</p>
+      </div>
+    </div>
+  </section>
+
+  <!-- ═══ LA CARTA SELLADA ═══ -->
+  <section class="carta">
+    <p class="carta-kicker">y lo más importante venía sellado</p>
+    <div class="sobre" id="sobre" role="button" tabindex="0" aria-label="Romper el sello y leer la carta">
+      <div class="wax-seal" aria-hidden="true">
+        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+          <path d="M12 3a6 6 0 0 0 9 9 9 9 0 1 1-9-9Z"/>
+        </svg>
+      </div>
+      <p class="sobre-hint">una carta para ti — <b>rompe el sello</b></p>
+      <div class="carta-texto" id="cartaTexto">
+        <p class="saludo">Anheluci:</p>
+        <p>Si tuviera que explicarle a alguien por qué te amo, empezaría por lo fácil: tu risa, tu voz, esa manera tuya de convertir un día común en algo que vale la pena recordar.</p>
+        <p>Pero lo que no sé explicar es la calma: lo que se queda quieto dentro de mí cuando estás cerca, como si el mundo bajara la voz para escuchar mejor lo que tú dices.</p>
+        <p>No sé qué hice para que el cielo me preste tu tiempo, pero todos los días se lo agradezco.</p>
+        <p>Hoy celebramos que existes. Yo, en silencio, celebro existir a la vez que tú.</p>
+        <p>Feliz cumpleaños, mi luna.</p>
+        <p class="firma-linea" id="cartaFirma">— tuyo, siempre</p>
+      </div>
+    </div>
+  </section>
+
+  <!-- ═══ LA VELA ═══ -->
+  <section class="vela-seccion">
+    <p class="v-titulo">un cumpleaños necesita tres cosas</p>
+    <p class="v-pasos"><b>un deseo</b>, una vela…<br>y el valor de soplar.</p>
+    <div class="candle-scene" id="candela" role="button" tabindex="0"
+         aria-label="Soplar la vela">
+      <div class="halo"></div>
+      <div class="flame"></div>
+      <div class="wick"></div>
+      <div class="wax"></div>
+      <div class="plate"></div>
+    </div>
+    <p class="v-hint">cierra los ojos, pide tu deseo —<br>y <b>toca la llama</b> para soplarla</p>
+  </section>
+
+  <!-- ═══ LA DECLARACIÓN ═══ -->
+  <section class="climax" id="climax">
+    <p class="c-pre">mi deseo lo pedí hace tiempo.<br>lo soplo cada noche, mirando este mismo cielo.</p>
+    <svg class="heart-svg" id="heartSvg" viewBox="0 0 360 340" aria-hidden="true"></svg>
+    <h2 class="c-amo">
+      <span class="word">Te</span> <span class="word">amo,</span>
+      <span class="word">Anheluci</span><span class="word rosa">.</span>
+    </h2>
+    <p class="c-cuando">
+      <span class="word">hoy,</span> <span class="word">mañana,</span><br>
+      <span class="word">y</span> <span class="word">en</span> <span class="word">todas</span>
+      <span class="word">las</span> <span class="word">lunas</span> <span class="word">que</span> <span class="word">faltan.</span>
+    </p>
+  </section>
+
+  <!-- ═══ EL CIERRE ═══ -->
+  <section class="cierre">
+    <div class="wrap">
+      <p class="c-deseo">que todos tus años se parezcan<br>a esta noche:<br>quietos, azules<br>y llenos de luz.</p>
+      <p class="c-firma">— <b>de quien te ama</b><br>bajo este mismo cielo ✦</p>
+      <p class="c-pd">
+        <b>P.D.</b> — la luna de arriba es la de esta noche, la de verdad:
+        la dibujé con su fase real para tu día.
+        el cielo también quiso felicitarte.
+      </p>
+    </div>
+  </section>
+
+</main>
+
+<button class="music-btn" id="musicBtn" aria-label="Activar la música de esta noche">
+  <svg viewBox="0 0 24 24"><path d="M9 18V5l12-2v13"/><circle cx="6" cy="18" r="3"/><circle cx="18" cy="16" r="3"/></svg>
+</button>
+<span class="music-label" id="musicLabel">música para esta noche</span>
+
+<div class="toast" id="toast" role="status"></div>
+
+<script>
+(() => {
+'use strict';
+
+/* ══════════════════════════════════════════════════════════
+   ✎ CONFIGURACIÓN ÍNTIMA — edita estas dos líneas
+   ══════════════════════════════════════════════════════════ */
+const CONFIG = {
+  nacimiento: '2007-09-16',   // ← 'AAAA-MM-DD' — su fecha de nacimiento → activa «tu luna número X»
+  firma: 'Luis Javier, tuyo',        // ← tu nombre → firma la carta; si lo dejas vacío firma «tuyo, siempre»
+};
+/* ══════════════════════════════════════════════════════════ */
+
+/* ═════════ utilidades ═════════ */
+const TAU = Math.PI * 2;
+const $ = id => document.getElementById(id);
+const rnd = (a = 1, b) => b === undefined ? Math.random() * a : a + Math.random() * (b - a);
+const pick = arr => arr[Math.random() * arr.length | 0];
+let REDUCE = false;
+try { REDUCE = matchMedia('(prefers-reduced-motion: reduce)').matches; } catch (e) {}
+
+/* ═════════ LA CAJA DE MÚSICA ═════════
+   Primero «feliz cumpleaños» en caja de música;
+   después, el jardín dormido: notas graves que florecen. */
+const ESCALA = [220, 261.63, 293.66, 329.63, 392, 440];
+const AudioBox = {
+  ctx: null, master: null, on: false, timer: null, drone: null, yaCumple: false,
+  delay: null, fb: null, wet: null,
+  init(){
+    if (this.ctx) return;
+    const AC = window.AudioContext || window.webkitAudioContext; if (!AC) return;
+    this.ctx = new AC();
+    this.master = this.ctx.createGain(); this.master.gain.value = 0.9;
+    const delay = this.ctx.createDelay(2); delay.delayTime.value = 0.46;
+    const fb = this.ctx.createGain(); fb.gain.value = 0.46;
+    const wet = this.ctx.createGain(); wet.gain.value = 0.52;
+    delay.connect(fb); fb.connect(delay); delay.connect(wet);
+    wet.connect(this.ctx.destination);
+    this.master.connect(this.ctx.destination); this.master.connect(delay);
+    this.delay = delay; this.fb = fb; this.wet = wet;
+  },
+  note(f, dur = 2, vol = 0.03, when = 0, attack = 0.6, type = 'sine'){
+    if (!this.ctx) return;
+    try {
+      const t0 = this.ctx.currentTime + when;
+      const o = this.ctx.createOscillator(), g = this.ctx.createGain();
+      o.type = type; o.frequency.value = f;
+      g.gain.setValueAtTime(0.0001, t0);
+      g.gain.exponentialRampToValueAtTime(vol, t0 + attack);
+      g.gain.exponentialRampToValueAtTime(0.0001, t0 + dur);
+      o.connect(g); g.connect(this.master);
+      o.start(t0); o.stop(t0 + dur + 0.05);
+    } catch (e) {}
+  },
+  cumple(){
+    /* «feliz cumpleaños», lenta, en caja de música */
+    const N = { G4:392, A4:440, B4:493.88, C5:523.25, D5:587.33, E5:659.25, F5:698.46, G5:783.99 };
+    const seq = [
+      ['G4',.30],['G4',.30],['A4',.62],['G4',.62],['C5',.62],['B4',1.25],
+      ['G4',.30],['G4',.30],['A4',.62],['G4',.62],['D5',.62],['C5',1.25],
+      ['G4',.30],['G4',.30],['G5',.62],['E5',.62],['C5',.62],['B4',.62],['A4',1.25],
+      ['F5',.30],['F5',.30],['E5',.62],['C5',.62],['D5',.62],['C5',1.9],
+    ];
+    let t = 0;
+    for (const [n, d] of seq){
+      this.note(N[n], d * 1.6 + .4, .05, t, .012, 'triangle');
+      if (d >= .6) this.note(N[n] * 2, d * .9, .013, t, .008, 'sine');
+      t += d;
+    }
+    return t;
+  },
+  arranque(){
+    if (this.yaCumple){ this.droneStart(); this.ambient(); return; }
+    this.yaCumple = true;
+    const dur = this.cumple();
+    setTimeout(() => { this.droneStart(); this.ambient(); }, (dur + .8) * 1000);
+  },
+  ambient(){
+    if (!this.on || !this.ctx) return;
+    const f = pick(ESCALA);
+    this.note(f, rnd(3.2, 5.5), rnd(.02, .032), 0, rnd(.5, 1.1));
+    if (Math.random() < .22) this.note(f * 1.5, rnd(3.5, 5), rnd(.012, .02), rnd(.4, .9), rnd(.6, 1.2));
+    this.timer = setTimeout(() => this.ambient(), rnd(3800, 8500));
+  },
+  droneStart(){
+    if (!this.ctx || this.drone) return;
+    try {
+      const g = this.ctx.createGain(); g.gain.value = 0;
+      const o1 = this.ctx.createOscillator(); o1.type = 'sine'; o1.frequency.value = 110;
+      const o2 = this.ctx.createOscillator(); o2.type = 'sine'; o2.frequency.value = 164.81; o2.detune.value = 4;
+      o1.connect(g); o2.connect(g); g.connect(this.master);
+      const lfo = this.ctx.createOscillator(); lfo.frequency.value = 1 / 11;
+      const lfoG = this.ctx.createGain(); lfoG.gain.value = .006;
+      lfo.connect(lfoG); lfoG.connect(g.gain);
+      o1.start(); o2.start(); lfo.start();
+      g.gain.setTargetAtTime(.016, this.ctx.currentTime, 2.5);
+      this.drone = { oscs: [o1, o2, lfo], gain: g };
+    } catch (e) {}
+  },
+  droneStop(){
+    if (!this.drone) return;
+    const d = this.drone; this.drone = null;
+    try {
+      d.gain.gain.setTargetAtTime(0, this.ctx.currentTime, 1.4);
+      setTimeout(() => { d.oscs.forEach(o => { try { o.stop(); } catch (e) {} }); }, 5200);
+    } catch (e) {}
+  },
+  chime(){ this.note(880, 2.4, .026, 0, .35); this.note(659.25, 1.8, .02, .12, .4); },
+  twinkle(){ this.note(1567.98, .5, .016, 0, .05); },
+  toggle(){
+    this.init();
+    if (this.ctx && this.ctx.state === 'suspended') this.ctx.resume();
+    this.on = !this.on;
+    if (this.on) this.arranque();
+    else { clearTimeout(this.timer); this.droneStop(); }
+    return this.on;
+  }
+};
+const musicBtn = $('musicBtn'), musicLabel = $('musicLabel');
+try { AudioBox.on = localStorage.getItem('deseo:musica') === 'on'; } catch (e) {}
+musicBtn.addEventListener('click', () => {
+  AudioBox.toggle();
+  try { localStorage.setItem('deseo:musica', AudioBox.on ? 'on' : 'off'); } catch (e) {}
+  musicBtn.classList.toggle('on', AudioBox.on);
+  musicLabel.textContent = AudioBox.on ? 'el jardín dormido ♪' : 'música para esta noche';
+  showToast(AudioBox.on ? 'que la música acompañe tu deseo ♪' : 'silencio, también es una canción');
+});
+if (AudioBox.on){
+  musicBtn.classList.add('on');
+  musicLabel.textContent = 'el jardín dormido ♪';
+  addEventListener('pointerdown', function once(){
+    AudioBox.init();
+    if (AudioBox.ctx?.state === 'suspended') AudioBox.ctx.resume();
+    AudioBox.arranque();
+    removeEventListener('pointerdown', once);
+  }, { once: true });
+}
+
+/* ═════════ TOAST ═════════ */
+const toastEl = $('toast');
+let toastTO = null;
+function showToast(msg){
+  toastEl.textContent = msg;
+  toastEl.classList.add('show');
+  clearTimeout(toastTO);
+  toastTO = setTimeout(() => toastEl.classList.remove('show'), 3400);
+}
+
+/* ═════════ CONFIG → lunas y firma ═════════ */
+(function aplicarConfig(){
+  let lunas = null;
+  if (CONFIG.nacimiento){
+    const d = new Date(CONFIG.nacimiento + 'T12:00:00');
+    if (!isNaN(d.getTime())){
+      const dias = (Date.now() - d.getTime()) / 86400000;
+      if (dias >= 0) lunas = Math.floor(dias / 29.530588853);
+    }
+  }
+  if (lunas !== null){
+    const el = $('hLunas');
+    el.hidden = false;
+    el.innerHTML = `esta noche celebramos tu <b>luna número ${lunas.toLocaleString('es')}</b>`;
+  }
+  if (CONFIG.firma){
+    const f = document.querySelector('.c-firma b');
+    if (f) f.textContent = CONFIG.firma;
+    $('cartaFirma').textContent = `— siempre tuyo, ${CONFIG.firma}`;
+  }
+})();
+
+/* ═════════ EL CIELO ═════════ */
+const cv = $('sky'), ctx = cv.getContext('2d');
+const SKY = { w: 0, h: 0, dpr: 1, stars: [], milky: [], meteors: [], flies: [] };
+const MOON = { x: 0, y: 0, R: 0, tex: null };
+let aurora = 0, auroraTarget = 0;   /* el cielo se sonroja */
+
+function mulberry32(seed){
+  return function(){
+    seed |= 0; seed = seed + 0x6D2B79F5 | 0;
+    let t = Math.imul(seed ^ seed >>> 15, 1 | seed);
+    t = t + Math.imul(t ^ t >>> 7, 61 | t) ^ t;
+    return ((t ^ t >>> 14) >>> 0) / 4294967296;
+  };
+}
+
+/* la fase REAL de esta noche */
+const SINODICO = 29.530588853, EPOCA_NUEVA = Date.UTC(2000, 0, 6, 18, 14);
+const moon = (() => {
+  const dias = (Date.now() - EPOCA_NUEVA) / 86400000;
+  let edad = dias % SINODICO; if (edad < 0) edad += SINODICO;
+  const p = edad / SINODICO;
+  return { p, illum: (1 - Math.cos(TAU * p)) / 2 };
+})();
+function pathIllum(c, cx, cy, R, p){
+  const k = Math.cos(TAU * p), a = Math.abs(k) * R;
+  c.beginPath();
+  if (p <= 0.5){
+    c.arc(cx, cy, R, -Math.PI / 2, Math.PI / 2, false);
+    if (k >= 0) c.ellipse(cx, cy, a, R, 0, Math.PI / 2, -Math.PI / 2, true);
+    else        c.ellipse(cx, cy, a, R, 0, Math.PI / 2, 1.5 * Math.PI, false);
+  } else {
+    c.arc(cx, cy, R, Math.PI / 2, 1.5 * Math.PI, false);
+    if (k < 0)  c.ellipse(cx, cy, a, R, 0, -Math.PI / 2, Math.PI / 2, false);
+    else        c.ellipse(cx, cy, a, R, 0, 1.5 * Math.PI, Math.PI / 2, true);
+  }
+  c.closePath();
+}
+
+/* textura lunar — la misma luna de siempre (semilla 981223) */
+function makeMoonTexture(w, dpr){
+  const c = document.createElement('canvas');
+  c.width = c.height = Math.max(2, Math.round(w * dpr));
+  const x = c.getContext('2d'); x.scale(dpr, dpr);
+  const R = w / 2, cx = R, cy = R;
+  const r = mulberry32(981223);
+  x.beginPath(); x.arc(cx, cy, R - .5, 0, TAU); x.clip();
+  x.fillStyle = '#C9D9F1'; x.fillRect(0, 0, w, w);
+  for (let i = 0, n = Math.round(w * w / 220); i < n; i++){
+    const px = r() * w, py = r() * w;
+    if (Math.hypot(px - cx, py - cy) > R) continue;
+    x.fillStyle = r() < .5
+      ? `rgba(84,115,200,${.03 + r() * .07})`
+      : `rgba(255,255,255,${.03 + r() * .09})`;
+    x.beginPath(); x.arc(px, py, .5 + r() * 1.5, 0, TAU); x.fill();
+  }
+  x.fillStyle = 'rgba(96,124,205,.28)';
+  for (const m of [{x:-.34,y:-.25,r:.30,n:7},{x:.16,y:-.42,r:.16,n:5},{x:.34,y:-.06,r:.20,n:6},{x:-.02,y:.16,r:.15,n:5},{x:-.44,y:.28,r:.12,n:4},{x:.22,y:.38,r:.12,n:4}]){
+    for (let i = 0; i < m.n; i++){
+      const a = r() * TAU, rr = r() * m.r * R * .5;
+      x.beginPath();
+      x.arc(cx + m.x * R + Math.cos(a) * rr, cy + m.y * R + Math.sin(a) * rr, m.r * R * (.45 + r() * .4), 0, TAU);
+      x.fill();
+    }
+  }
+  for (let i = 0; i < 48; i++){
+    const a = r() * TAU, rr = Math.sqrt(r()) * R * .92;
+    const px = cx + Math.cos(a) * rr, py = cy + Math.sin(a) * rr;
+    const cr = R * (.012 + Math.pow(r(), 2.2) * .075);
+    x.fillStyle = `rgba(6,13,38,${.16 + r() * .12})`;
+    x.beginPath(); x.arc(px, py, cr, 0, TAU); x.fill();
+    x.lineWidth = Math.max(.6, cr * .18);
+    x.strokeStyle = `rgba(250,252,255,${.22 + r() * .22})`;
+    x.beginPath(); x.arc(px, py, cr, -Math.PI * .95, -Math.PI * .15); x.stroke();
+  }
+  const sh = x.createRadialGradient(cx - R * .18, cy - R * .22, R * .15, cx, cy, R * 1.02);
+  sh.addColorStop(0, 'rgba(255,255,255,.12)'); sh.addColorStop(.55, 'rgba(255,255,255,0)');
+  sh.addColorStop(.8, 'rgba(6,13,38,.10)'); sh.addColorStop(1, 'rgba(6,13,38,.30)');
+  x.fillStyle = sh; x.fillRect(0, 0, w, w);
+  return c;
+}
+
+function sizeSky(){
+  SKY.w = innerWidth; SKY.h = innerHeight;
+  SKY.dpr = Math.min(devicePixelRatio || 1, 2);
+  cv.width = Math.round(SKY.w * SKY.dpr); cv.height = Math.round(SKY.h * SKY.dpr);
+  cv.style.width = SKY.w + 'px'; cv.style.height = SKY.h + 'px';
+  ctx.setTransform(SKY.dpr, 0, 0, SKY.dpr, 0, 0);
+  SKY.stars = Array.from({ length: 170 }, () => ({
+    x: rnd(SKY.w), y: rnd(SKY.h),
+    r: rnd(.4, 1.4), big: Math.random() < .06,
+    tw: rnd(TAU), sp: rnd(.5, 1.8)
+  }));
+  SKY.milky = [];
+  for (let i = 0; i < 130; i++){
+    const t = rnd(1);
+    const bx = SKY.w * (.1 + t * .9), by = SKY.h * (.65 - t * .5);
+    SKY.milky.push({ x: bx + rnd(-70, 70), y: by + rnd(-46, 46), r: rnd(.3, .8), a: rnd(.04, .14) });
+  }
+  MOON.R = Math.max(54, Math.min(108, Math.min(SKY.w, SKY.h) * .11));
+  MOON.x = SKY.w > 640 ? SKY.w * .76 : SKY.w * .70;
+  MOON.y = SKY.h * (SKY.w > 640 ? .24 : .16);
+  MOON.tex = makeMoonTexture(MOON.R * 2, SKY.dpr);
+}
+addEventListener('resize', sizeSky);
+sizeSky();
+
+/* ——— estrellas fugaces ——— */
+function spawnMeteor(x, y){
+  if (SKY.meteors.length > 7) return;
+  const dir = Math.random() < .5 ? 1 : -1;
+  const a = (Math.PI / 4) * rnd(.6, 1);
+  const ang = dir > 0 ? a : Math.PI - a;
+  SKY.meteors.push({
+    x: x ?? rnd(SKY.w * .1, SKY.w * .9),
+    y: y ?? rnd(SKY.h * .05, SKY.h * .4),
+    ang,
+    sp: rnd(420, 700),
+    life: 1, decay: rnd(1.6, 2.4),
+    len: rnd(90, 170)
+  });
+}
+let meteorTimer = 0, nextMeteor = rnd(2500, 6000);
+
+/* ——— mariposas de luz ——— */
+class Fly {
+  constructor(){
+    this.x = rnd(SKY.w); this.y = rnd(SKY.h * .85);
+    this.h = rnd(TAU); this.size = rnd(6, 11);
+    this.color = pick(['#7999DC', '#9D8FD6', '#A8C0EB']);
+    this.flap = rnd(TAU); this.fs = rnd(6, 9);
+    this.wander = rnd(TAU); this.speed = rnd(22, 38);
+  }
+  step(dt, t){
+    this.flap += this.fs * dt;
+    this.h += Math.sin(t / 1500 + this.wander) * .9 * dt;
+    const m = 60;
+    if (this.x < m) this.h = this.h * .9;
+    if (this.x > SKY.w - m) this.h = Math.PI - this.h * .9;
+    if (this.y < m) this.h = Math.PI / 2;
+    if (this.y > SKY.h - m) this.h = -Math.PI / 2;
+    this.x += Math.cos(this.h) * this.speed * dt;
+    this.y += Math.sin(this.h) * this.speed * dt + Math.sin(this.flap) * -8 * dt;
+  }
+  draw(c){
+    const spread = .3 + .7 * Math.abs(Math.sin(this.flap));
+    const s = this.size;
+    c.save();
+    c.translate(this.x, this.y);
+    c.rotate(this.h + Math.PI / 2);
+    for (const side of [-1, 1]){
+      c.save();
+      c.scale(side * spread, 1);
+      c.shadowColor = this.color; c.shadowBlur = 12;
+      c.fillStyle = this.color + 'b3';
+      c.beginPath();
+      c.moveTo(0, -s * .1);
+      c.bezierCurveTo(s * 1.1, -s, s * 1.9, -s * .5, s * 1.4, s * .1);
+      c.bezierCurveTo(s * 1.05, s * .35, s * .5, s * .28, 0, s * .1);
+      c.closePath(); c.fill();
+      c.beginPath();
+      c.moveTo(0, s * .1);
+      c.bezierCurveTo(s * .9, s * .25, s * 1.05, s * .9, s * .45, s);
+      c.bezierCurveTo(s * .2, s * .95, s * .07, s * .55, 0, s * .2);
+      c.closePath(); c.fill();
+      c.restore();
+    }
+    c.shadowBlur = 7;
+    c.fillStyle = '#DCE7F8';
+    c.beginPath(); c.ellipse(0, s * .25, s * .13, s * .5, 0, 0, TAU); c.fill();
+    c.restore();
+  }
+}
+if (!REDUCE) for (let i = 0; i < 3; i++) SKY.flies.push(new Fly());
+
+/* ——— dibujo del cielo, capa por capa ——— */
+function drawSky(t){
+  const { w, h } = SKY;
+  const g = ctx.createLinearGradient(0, 0, 0, h);
+  g.addColorStop(0, '#060D26'); g.addColorStop(.65, '#0A1434'); g.addColorStop(1, '#101D45');
+  ctx.fillStyle = g; ctx.fillRect(0, 0, w, h);
+
+  /* vía láctea */
+  for (const m of SKY.milky){
+    ctx.fillStyle = `rgba(200,215,245,${m.a})`;
+    ctx.beginPath(); ctx.arc(m.x, m.y, m.r, 0, TAU); ctx.fill();
+  }
+  const mw = ctx.createLinearGradient(w * .1, h * .65, w * .9, h * .15);
+  mw.addColorStop(0, 'rgba(162,183,228,0)');
+  mw.addColorStop(.5, 'rgba(162,183,228,.05)');
+  mw.addColorStop(1, 'rgba(162,183,228,0)');
+  ctx.fillStyle = mw; ctx.fillRect(0, 0, w, h);
+
+  /* la aurora — el cielo sonrojándose */
+  if (aurora > .01){
+    const ribs = [
+      { c:'121,153,220', a:.11, y:.14, sp:.00006,  w:.95, ph:0 },
+      { c:'157,143,214', a:.08, y:.22, sp:.000045, w:1.2, ph:2.1 },
+      { c:'255,182,193', a:.05, y:.29, sp:.00007,  w:.75, ph:4.2 },
+    ];
+    for (let i = 0; i < ribs.length; i++){
+      const rb = ribs[i];
+      const cx2 = w * .5 + Math.sin(t * rb.sp + rb.ph) * w * .2;
+      const cy2 = h * rb.y + Math.cos(t * rb.sp * 1.4 + rb.ph) * h * .035;
+      const R2 = Math.max(w, h) * .52 * rb.w;
+      const g2 = ctx.createRadialGradient(cx2, cy2, R2 * .05, cx2, cy2, R2);
+      g2.addColorStop(0, `rgba(${rb.c},${(rb.a * aurora).toFixed(3)})`);
+      g2.addColorStop(1, `rgba(${rb.c},0)`);
+      ctx.fillStyle = g2;
+      ctx.fillRect(0, 0, w, h);
+    }
+  }
+
+  /* estrellas */
+  for (const s of SKY.stars){
+    const a = REDUCE ? .8 : .3 + .7 * Math.abs(Math.sin(t / 1000 * s.sp + s.tw));
+    ctx.fillStyle = `rgba(229,237,250,${a * .9})`;
+    ctx.beginPath(); ctx.arc(s.x, s.y, s.r, 0, TAU); ctx.fill();
+    if (s.big){
+      ctx.strokeStyle = `rgba(229,237,250,${a * .5})`;
+      ctx.lineWidth = .7;
+      const L = s.r * 5 * a;
+      ctx.beginPath();
+      ctx.moveTo(s.x - L, s.y); ctx.lineTo(s.x + L, s.y);
+      ctx.moveTo(s.x, s.y - L); ctx.lineTo(s.x, s.y + L);
+      ctx.stroke();
+    }
+  }
+
+  /* la luna — la de esta noche */
+  const breathe = REDUCE ? .5 : .5 + .5 * Math.sin(t / 3000);
+  const halo = ctx.createRadialGradient(MOON.x, MOON.y, MOON.R * .9, MOON.x, MOON.y, MOON.R * 3.4);
+  halo.addColorStop(0, `rgba(201,217,241,${.10 + .06 * breathe})`);
+  halo.addColorStop(.5, `rgba(168,192,235,${.045 + .03 * breathe})`);
+  halo.addColorStop(1, 'rgba(168,192,235,0)');
+  ctx.fillStyle = halo;
+  ctx.fillRect(MOON.x - MOON.R * 3.4, MOON.y - MOON.R * 3.4, MOON.R * 6.8, MOON.R * 6.8);
+
+  ctx.save();
+  ctx.beginPath(); ctx.arc(MOON.x, MOON.y, MOON.R, 0, TAU);
+  ctx.fillStyle = 'rgba(168,192,235,.10)';
+  ctx.fill();
+  if (moon.p > .003 && moon.p < .997){
+    ctx.save();
+    pathIllum(ctx, MOON.x, MOON.y, MOON.R, moon.p);
+    ctx.clip();
+    ctx.drawImage(MOON.tex, MOON.x - MOON.R, MOON.y - MOON.R, MOON.R * 2, MOON.R * 2);
+    ctx.restore();
+  }
+  ctx.beginPath(); ctx.arc(MOON.x, MOON.y, MOON.R, 0, TAU);
+  ctx.lineWidth = 1; ctx.strokeStyle = 'rgba(201,217,241,.35)';
+  ctx.stroke();
+  ctx.restore();
+
+  /* fugaces */
+  for (let i = SKY.meteors.length - 1; i >= 0; i--){
+    const m = SKY.meteors[i];
+    const a = Math.sin(Math.min(1, 1 - m.life) * Math.PI);
+    const dx = Math.cos(m.ang), dy = Math.sin(m.ang);
+    const tx = m.x - dx * m.len, ty = m.y - dy * m.len;
+    const lg = ctx.createLinearGradient(m.x, m.y, tx, ty);
+    lg.addColorStop(0, `rgba(229,237,250,${.95 * a})`);
+    lg.addColorStop(.3, `rgba(168,192,235,${.5 * a})`);
+    lg.addColorStop(1, 'rgba(168,192,235,0)');
+    ctx.strokeStyle = lg; ctx.lineWidth = 2; ctx.lineCap = 'round';
+    ctx.beginPath(); ctx.moveTo(m.x, m.y); ctx.lineTo(tx, ty); ctx.stroke();
+    ctx.fillStyle = `rgba(255,255,255,${a})`;
+    ctx.shadowColor = 'rgba(201,217,241,.9)'; ctx.shadowBlur = 10;
+    ctx.beginPath(); ctx.arc(m.x, m.y, 1.8, 0, TAU); ctx.fill();
+    ctx.shadowBlur = 0;
+    if (m.life <= 0) SKY.meteors.splice(i, 1);
+  }
+
+  /* mariposas */
+  for (const f of SKY.flies) f.draw(ctx);
+}
+
+/* ——— bucle ——— */
+let lastT = performance.now();
+(function loop(t){
+  const dt = Math.min(.05, (t - lastT) / 1000); lastT = t;
+  try {
+    if (REDUCE) aurora = auroraTarget;
+    else aurora += (auroraTarget - aurora) * Math.min(1, dt * .45);
+    if (!REDUCE){
+      meteorTimer += dt * 1000;
+      if (meteorTimer > nextMeteor){
+        meteorTimer = 0; nextMeteor = rnd(3800, 9000);
+        spawnMeteor();
+      }
+      for (const m of SKY.meteors){
+        m.x += Math.cos(m.ang) * m.sp * dt;
+        m.y += Math.sin(m.ang) * m.sp * dt;
+        m.life -= m.decay * dt;
+      }
+      for (const f of SKY.flies) f.step(dt, t);
+    }
+    drawSky(t);
+  } catch (err) { /* un frame fallido jamás apaga el cielo */ }
+  requestAnimationFrame(loop);
+})(lastT);
+
+/* ═════════ entrada del hero ═════════ */
+requestAnimationFrame(() => cv.classList.add('on'));
+(() => {
+  const h = $('hNombre');
+  const punto = h.querySelector('.punto');
+  const texto = 'Anheluci';
+  h.textContent = '';
+  texto.split('').forEach((ch, i) => {
+    const s = document.createElement('span');
+    s.className = 'l'; s.textContent = ch;
+    h.appendChild(s);
+    setTimeout(() => s.classList.add('in'), 1450 + i * 95);
+  });
+  h.appendChild(punto);
+})();
+
+/* ═════════ revelado del poema ═════════ */
+const io = new IntersectionObserver(entries => {
+  for (const e of entries){
+    if (e.isIntersecting){
+      e.target.classList.add('in');
+      io.unobserve(e.target);
+    }
+  }
+}, { threshold: .35, rootMargin: '0px 0px -12% 0px' });
+document.querySelectorAll('[data-reveal]').forEach(el => io.observe(el));
+
+/* ═════════ chispas (helper) ═════════ */
+function sparkleBurst(x, y, color, n = 12){
+  for (let i = 0; i < n; i++){
+    const s = document.createElement('i');
+    s.style.cssText = `position:fixed;left:${x - 2}px;top:${y - 2}px;width:4px;height:4px;border-radius:99px;
+      background:${color};pointer-events:none;z-index:30;`;
+    document.body.appendChild(s);
+    const a = rnd(TAU), d = rnd(14, 42);
+    s.animate([
+      { transform: 'translate(0,0) scale(1)', opacity: 1 },
+      { transform: `translate(${Math.cos(a) * d}px,${Math.sin(a) * d - 8}px) scale(.1)`, opacity: 0 }
+    ], { duration: rnd(500, 800), easing: 'cubic-bezier(.2,.7,.3,1)' }).onfinish = () => s.remove();
+  }
+}
+
+/* ═════════ LA CARTA ═════════ */
+const sobre = $('sobre');
+function abrirCarta(){
+  if (sobre.classList.contains('abierta')) return;
+  sobre.classList.add('abierta');
+  AudioBox.init();
+  if (AudioBox.ctx && AudioBox.ctx.state === 'suspended') AudioBox.ctx.resume();
+  AudioBox.note(392, .35, .045, 0, .012, 'triangle');
+  AudioBox.note(587.33, .6, .035, .1, .02, 'sine');
+  const seal = sobre.querySelector('.wax-seal');
+  const r = seal.getBoundingClientRect();
+  sparkleBurst(r.left + r.width / 2, r.top + r.height / 2, '#ffb6c1', 14);
+  setTimeout(() => spawnMeteor(), 400);
+  setTimeout(() => spawnMeteor(), 900);
+  setTimeout(() => {
+    seal.style.display = 'none';
+    const sh = sobre.querySelector('.sobre-hint');
+    if (sh) sh.style.display = 'none';
+  }, 800);
+}
+sobre.addEventListener('click', abrirCarta);
+sobre.addEventListener('keydown', e => {
+  if (e.key === 'Enter' || e.key === ' '){ e.preventDefault(); abrirCarta(); }
+});
+
+/* ═════════ LA VELA ═════════ */
+const candela = $('candela');
+const climax = $('climax');
+let soplada = false;
+
+function soplar(){
+  if (soplada) return;
+  soplada = true;
+  candela.classList.add('out');
+
+  const r = candela.getBoundingClientRect();
+  const mx = r.left + r.width / 2, my = r.top + r.height - 148;
+  for (let i = 0; i < 8; i++){
+    const sm = document.createElement('span');
+    sm.className = 'smoke';
+    sm.style.left = `calc(50% + ${rnd(-5, 5)}px)`;
+    candela.appendChild(sm);
+    const d1 = rnd(-26, 26), d2 = d1 + rnd(-30, 30);
+    sm.animate([
+      { transform: 'translate(0,0) scale(.5)', opacity: .55, filter: 'blur(2px)' },
+      { transform: `translate(${d1}px,-70px) scale(1.5)`, opacity: .3, offset: .5, filter: 'blur(5px)' },
+      { transform: `translate(${d2}px,-160px) scale(2.6)`, opacity: 0, filter: 'blur(9px)' }
+    ], { duration: rnd(1700, 2400), delay: rnd(0, 260), easing: 'cubic-bezier(.3,.4,.4,1)' }).onfinish = () => sm.remove();
+  }
+  sparkleBurst(mx, my, '#ffd977', 14);
+
+  AudioBox.init();
+  if (AudioBox.ctx?.state === 'suspended') AudioBox.ctx.resume();
+  AudioBox.chime();
+
+  const hint = document.querySelector('.v-hint');
+  if (hint) hint.innerHTML = '<b>que se cumpla</b> ✦';
+
+  for (let i = 0; i < 6; i++){
+    setTimeout(() => spawnMeteor(), 500 + i * 280);
+  }
+
+  setTimeout(() => {
+    climax.classList.add('on');
+    setTimeout(() => climax.scrollIntoView({ behavior: 'smooth', block: 'start' }), 120);
+    buildHeart();
+  }, 1100);
+}
+candela.addEventListener('click', soplar);
+candela.addEventListener('keydown', e => {
+  if (e.key === 'Enter' || e.key === ' '){ e.preventDefault(); soplar(); }
+});
+
+/* ═════════ el corazón-constelación ═════════ */
+function buildHeart(){
+  const svg = $('heartSvg');
+  const NS = 'http://www.w3.org/2000/svg';
+  const pts = [];
+  const N = 26;
+  for (let i = 0; i < N; i++){
+    const t = (i / N) * TAU;
+    const x = 16 * Math.pow(Math.sin(t), 3);
+    const y = 13 * Math.cos(t) - 5 * Math.cos(2 * t) - 2 * Math.cos(3 * t) - Math.cos(4 * t);
+    pts.push({ x: 180 + x * 9.4, y: 172 - y * 8.6 });
+  }
+  const circles = pts.map((p, i) => {
+    const c = document.createElementNS(NS, 'circle');
+    c.setAttribute('cx', p.x); c.setAttribute('cy', p.y);
+    c.setAttribute('r', i % 4 === 0 ? 3.4 : 2.1);
+    c.setAttribute('fill', i % 4 === 0 ? '#ffb6c1' : '#E5EDFA');
+    c.style.filter = 'drop-shadow(0 0 4px rgba(229,237,250,.8))';
+    svg.appendChild(c);
+    return c;
+  });
+  const path = document.createElementNS(NS, 'path');
+  path.setAttribute('d', pts.map((p, i) => `${i ? 'L' : 'M'} ${p.x.toFixed(1)} ${p.y.toFixed(1)}`).join(' ') + ' Z');
+  svg.appendChild(path);
+  const L = path.getTotalLength();
+  path.style.strokeDasharray = L;
+  path.style.strokeDashoffset = L;
+
+  circles.forEach((c, i) => setTimeout(() => c.classList.add('in'), 500 + i * 85));
+  setTimeout(() => {
+    path.style.transition = 'stroke-dashoffset 1.9s cubic-bezier(.4,0,.3,1)';
+    path.style.strokeDashoffset = '0';
+  }, 500 + N * 85 + 250);
+  const tBeat = 500 + N * 85 + 2300;
+  setTimeout(() => {
+    svg.classList.add('beat');
+    const words = document.querySelectorAll('.climax .word');
+    words.forEach((w, i) => setTimeout(() => w.classList.add('in'), i * 190));
+  }, tBeat);
+  /* y cuando el corazón ya late… el cielo se sonroja */
+  setTimeout(() => {
+    auroraTarget = 1;
+    AudioBox.note(220, 5, .028, 0, 1.4);
+    AudioBox.note(329.63, 5, .022, .18, 1.6);
+    AudioBox.note(440, 4, .014, .36, 1.8);
+    showToast('mira el cielo — se sonroja contigo ✦');
+  }, tBeat + 3200);
+}
+
+/* ═════════ palabras que flotan + deseos al cielo ═════════ */
+const PALABRAS = ['te amo','mi luna','mi calma','mi luz','mi hogar','mi persona','contigo','siempre','mi estrella','mi cielo','eres arte','mi mejor noticia'];
+let primerDeseo = false, lastPalabra = 0;
+function palabraFlotante(x, y){
+  const el = document.createElement('span');
+  el.className = 'palabra-fx';
+  el.textContent = pick(PALABRAS);
+  if (Math.random() < .32) el.style.color = 'var(--corazon)';
+  document.body.appendChild(el);
+  const sway = rnd(-30, 30);
+  el.animate([
+    { transform: `translate(${x}px,${y}px) scale(.5)`, opacity: 0 },
+    { transform: `translate(${x + sway * .3}px,${y - 40}px) scale(1)`, opacity: .95, offset: .28 },
+    { transform: `translate(${x + sway}px,${y - 120}px) scale(1)`, opacity: 0 }
+  ], { duration: rnd(2400, 3300), easing: 'cubic-bezier(.2,.5,.3,1)' }).onfinish = () => el.remove();
+}
+document.addEventListener('click', e => {
+  if (e.target.closest('button, a, .candle-scene, .stanza, .word, .music-btn, .sobre')) return;
+  spawnMeteor(e.clientX, e.clientY);
+  sparkleBurst(e.clientX, e.clientY, '#A8C0EB', 8);
+  const now = performance.now();
+  if (!REDUCE && now - lastPalabra > 700){
+    lastPalabra = now;
+    palabraFlotante(e.clientX + rnd(-10, 10), e.clientY - 14);
+  }
+  if (AudioBox.on) AudioBox.twinkle();
+  if (!primerDeseo){
+    primerDeseo = true;
+    showToast('☆ que tu deseo viaje con ella');
+  }
+});
+
+})();
+</script>
+</body>
+</html>
